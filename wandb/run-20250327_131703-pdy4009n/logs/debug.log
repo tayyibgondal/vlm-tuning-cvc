@@ -1,0 +1,155 @@
+2025-03-27 13:17:03,889 INFO    MainThread:68061 [wandb_setup.py:_flush():67] Current SDK version is 0.19.8
+2025-03-27 13:17:03,889 INFO    MainThread:68061 [wandb_setup.py:_flush():67] Configure stats pid to 68061
+2025-03-27 13:17:03,889 INFO    MainThread:68061 [wandb_setup.py:_flush():67] Loading settings from /home/cowlar/.config/wandb/settings
+2025-03-27 13:17:03,889 INFO    MainThread:68061 [wandb_setup.py:_flush():67] Loading settings from /home/cowlar/Documents/vlm/wandb/settings
+2025-03-27 13:17:03,889 INFO    MainThread:68061 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-03-27 13:17:03,889 ERROR   MainThread:68061 [wandb_setup.py:_flush():69] error in wandb.init()
+Traceback (most recent call last):
+  File "/home/cowlar/Documents/vlm/vlm/lib/python3.10/site-packages/IPython/core/interactiveshell.py", line 3579, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "/tmp/ipykernel_68061/3488968075.py", line 3, in <module>
+    wandb.init(
+  File "/home/cowlar/Documents/vlm/vlm/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1482, in init
+    wandb._sentry.reraise(e)
+  File "/home/cowlar/Documents/vlm/vlm/lib/python3.10/site-packages/wandb/analytics/sentry.py", line 156, in reraise
+    raise exc.with_traceback(sys.exc_info()[2])
+  File "/home/cowlar/Documents/vlm/vlm/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1427, in init
+    wi.maybe_login(init_settings)
+  File "/home/cowlar/Documents/vlm/vlm/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 175, in maybe_login
+    wandb_login._login(
+  File "/home/cowlar/Documents/vlm/vlm/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 305, in _login
+    key, key_status = wlogin.prompt_api_key()
+  File "/home/cowlar/Documents/vlm/vlm/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 227, in prompt_api_key
+    key, status = self._prompt_api_key()
+  File "/home/cowlar/Documents/vlm/vlm/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 206, in _prompt_api_key
+    key = apikey.prompt_api_key(
+  File "/home/cowlar/Documents/vlm/vlm/lib/python3.10/site-packages/wandb/sdk/lib/apikey.py", line 171, in prompt_api_key
+    key = input_callback(api_ask).strip()
+  File "/home/cowlar/Documents/vlm/vlm/lib/python3.10/site-packages/click/termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+  File "/home/cowlar/Documents/vlm/vlm/lib/python3.10/site-packages/click/termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+2025-03-27 13:17:03,890 INFO    MainThread:68061 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /home/cowlar/Documents/vlm/wandb/run-20250327_131703-pdy4009n/logs/debug.log
+2025-03-27 13:17:03,890 INFO    MainThread:68061 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /home/cowlar/Documents/vlm/wandb/run-20250327_131703-pdy4009n/logs/debug-internal.log
+2025-03-27 13:17:03,890 INFO    MainThread:68061 [wandb_init.py:monkeypatch_ipython():599] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x71b9eb54bd60>
+2025-03-27 13:17:03,890 INFO    MainThread:68061 [wandb_init.py:init():761] calling init triggers
+2025-03-27 13:17:03,890 INFO    MainThread:68061 [wandb_init.py:init():766] wandb.init called with sweep_config: {}
+config: {'output_dir': 'qwen2-7b-instruct-trl-sft-ChartQA', 'overwrite_output_dir': False, 'do_train': False, 'do_eval': True, 'do_predict': False, 'eval_strategy': <IntervalStrategy.STEPS: 'steps'>, 'prediction_loss_only': False, 'per_device_train_batch_size': 4, 'per_device_eval_batch_size': 4, 'per_gpu_train_batch_size': None, 'per_gpu_eval_batch_size': None, 'gradient_accumulation_steps': 8, 'eval_accumulation_steps': None, 'eval_delay': 0, 'torch_empty_cache_steps': None, 'learning_rate': 0.0002, 'weight_decay': 0.0, 'adam_beta1': 0.9, 'adam_beta2': 0.999, 'adam_epsilon': 1e-08, 'max_grad_norm': 0.3, 'num_train_epochs': 3, 'max_steps': -1, 'lr_scheduler_type': <SchedulerType.CONSTANT: 'constant'>, 'lr_scheduler_kwargs': {}, 'warmup_ratio': 0.03, 'warmup_steps': 0, 'log_level': 'passive', 'log_level_replica': 'warning', 'log_on_each_node': True, 'logging_dir': 'qwen2-7b-instruct-trl-sft-ChartQA/runs/Mar27_13-12-34_ahsan-pc', 'logging_strategy': <IntervalStrategy.STEPS: 'steps'>, 'logging_first_step': False, 'logging_steps': 10, 'logging_nan_inf_filter': True, 'save_strategy': <SaveStrategy.STEPS: 'steps'>, 'save_steps': 20, 'save_total_limit': None, 'save_safetensors': True, 'save_on_each_node': False, 'save_only_model': False, 'restore_callback_states_from_checkpoint': False, 'no_cuda': False, 'use_cpu': False, 'use_mps_device': False, 'seed': 42, 'data_seed': None, 'jit_mode_eval': False, 'use_ipex': False, 'bf16': True, 'fp16': False, 'fp16_opt_level': 'O1', 'half_precision_backend': 'auto', 'bf16_full_eval': False, 'fp16_full_eval': False, 'tf32': True, 'local_rank': 0, 'ddp_backend': None, 'tpu_num_cores': None, 'tpu_metrics_debug': False, 'debug': [], 'dataloader_drop_last': False, 'eval_steps': 10, 'dataloader_num_workers': 0, 'dataloader_prefetch_factor': None, 'past_index': -1, 'run_name': 'qwen2-7b-instruct-trl-sft-ChartQA', 'disable_tqdm': False, 'remove_unused_columns': False, 'label_names': None, 'load_best_model_at_end': True, 'metric_for_best_model': 'eval_loss', 'greater_is_better': False, 'ignore_data_skip': False, 'fsdp': [], 'fsdp_min_num_params': 0, 'fsdp_config': {'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False}, 'tp_size': 0, 'fsdp_transformer_layer_cls_to_wrap': None, 'accelerator_config': AcceleratorConfig(split_batches=False, dispatch_batches=None, even_batches=True, use_seedable_sampler=True, non_blocking=False, gradient_accumulation_kwargs=None, use_configured_state=False), 'deepspeed': None, 'label_smoothing_factor': 0.0, 'optim': <OptimizerNames.ADAMW_TORCH_FUSED: 'adamw_torch_fused'>, 'optim_args': None, 'adafactor': False, 'group_by_length': False, 'length_column_name': 'length', 'report_to': ['wandb'], 'ddp_find_unused_parameters': None, 'ddp_bucket_cap_mb': None, 'ddp_broadcast_buffers': None, 'dataloader_pin_memory': True, 'dataloader_persistent_workers': False, 'skip_memory_metrics': True, 'use_legacy_prediction_loop': False, 'push_to_hub': True, 'resume_from_checkpoint': None, 'hub_model_id': None, 'hub_strategy': <HubStrategy.EVERY_SAVE: 'every_save'>, 'hub_token': None, 'hub_private_repo': None, 'hub_always_push': False, 'gradient_checkpointing': True, 'gradient_checkpointing_kwargs': {'use_reentrant': False}, 'include_inputs_for_metrics': False, 'include_for_metrics': [], 'eval_do_concat_batches': True, 'fp16_backend': 'auto', 'evaluation_strategy': None, 'push_to_hub_model_id': None, 'push_to_hub_organization': None, 'push_to_hub_token': None, 'mp_parameters': '', 'auto_find_batch_size': False, 'full_determinism': False, 'torchdynamo': None, 'ray_scope': 'last', 'ddp_timeout': 1800, 'torch_compile': False, 'torch_compile_backend': None, 'torch_compile_mode': None, 'dispatch_batches': None, 'split_batches': None, 'include_tokens_per_second': False, 'include_num_input_tokens_seen': False, 'neftune_noise_alpha': None, 'optim_target_modules': None, 'batch_eval_metrics': False, 'eval_on_start': False, 'use_liger_kernel': False, 'eval_use_gather_object': False, 'average_tokens_across_devices': False, 'model_init_kwargs': None, 'dataset_text_field': '', 'dataset_kwargs': {'skip_prepare_dataset': True}, 'dataset_num_proc': None, 'max_length': 1024, 'packing': False, 'padding_free': False, 'eval_packing': None, 'dataset_batch_size': None, 'num_of_sequences': None, 'chars_per_token': None, 'max_seq_length': None, 'use_liger': None, 'distributed_state': Distributed environment: NO
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda
+, '_n_gpu': 1, '__cached__setup_devices': device(type='cuda', index=0), 'deepspeed_plugin': None, '_wandb': {}}
+2025-03-27 13:17:03,890 INFO    MainThread:68061 [wandb_init.py:init():784] starting backend
+2025-03-27 13:17:03,890 INFO    MainThread:68061 [wandb_init.py:init():788] sending inform_init request
+2025-03-27 13:17:03,892 INFO    MainThread:68061 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-03-27 13:17:03,892 INFO    MainThread:68061 [wandb_init.py:init():798] backend started and connected
+2025-03-27 13:17:03,899 INFO    MainThread:68061 [wandb_run.py:_label_probe_notebook():1204] probe notebook
+2025-03-27 13:17:03,899 INFO    MainThread:68061 [wandb_init.py:init():891] updated telemetry
+2025-03-27 13:17:03,900 INFO    MainThread:68061 [wandb_init.py:init():915] communicating run to backend with 90.0 second timeout
+2025-03-27 13:17:04,557 INFO    MainThread:68061 [wandb_init.py:init():990] starting run threads in backend
+2025-03-27 13:17:04,643 INFO    MainThread:68061 [wandb_run.py:_console_start():2375] atexit reg
+2025-03-27 13:17:04,643 INFO    MainThread:68061 [wandb_run.py:_redirect():2227] redirect: wrap_raw
+2025-03-27 13:17:04,643 INFO    MainThread:68061 [wandb_run.py:_redirect():2292] Wrapping output streams.
+2025-03-27 13:17:04,643 INFO    MainThread:68061 [wandb_run.py:_redirect():2315] Redirects installed.
+2025-03-27 13:17:04,644 INFO    MainThread:68061 [wandb_init.py:init():1032] run started, returning control to user process
+2025-03-27 13:17:04,645 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:17:04,645 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:17:14,399 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:17:14,401 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:17:14,401 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:17:15,791 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:17:15,795 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:17:15,797 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:18:37,653 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:18:37,654 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:18:37,654 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:18:56,413 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:18:56,422 INFO    MainThread:68061 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /home/cowlar/Documents/vlm/wandb/run-20250327_131856-wk93ckfe/logs/debug.log
+2025-03-27 13:18:56,422 INFO    MainThread:68061 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /home/cowlar/Documents/vlm/wandb/run-20250327_131856-wk93ckfe/logs/debug-internal.log
+2025-03-27 13:18:56,422 INFO    MainThread:68061 [wandb_init.py:init():761] calling init triggers
+2025-03-27 13:18:56,423 INFO    MainThread:68061 [wandb_init.py:init():766] wandb.init called with sweep_config: {}
+config: {'output_dir': 'qwen2-7b-instruct-trl-sft-ChartQA', 'overwrite_output_dir': False, 'do_train': False, 'do_eval': True, 'do_predict': False, 'eval_strategy': <IntervalStrategy.STEPS: 'steps'>, 'prediction_loss_only': False, 'per_device_train_batch_size': 4, 'per_device_eval_batch_size': 4, 'per_gpu_train_batch_size': None, 'per_gpu_eval_batch_size': None, 'gradient_accumulation_steps': 8, 'eval_accumulation_steps': None, 'eval_delay': 0, 'torch_empty_cache_steps': None, 'learning_rate': 0.0002, 'weight_decay': 0.0, 'adam_beta1': 0.9, 'adam_beta2': 0.999, 'adam_epsilon': 1e-08, 'max_grad_norm': 0.3, 'num_train_epochs': 3, 'max_steps': -1, 'lr_scheduler_type': <SchedulerType.CONSTANT: 'constant'>, 'lr_scheduler_kwargs': {}, 'warmup_ratio': 0.03, 'warmup_steps': 0, 'log_level': 'passive', 'log_level_replica': 'warning', 'log_on_each_node': True, 'logging_dir': 'qwen2-7b-instruct-trl-sft-ChartQA/runs/Mar27_13-12-34_ahsan-pc', 'logging_strategy': <IntervalStrategy.STEPS: 'steps'>, 'logging_first_step': False, 'logging_steps': 10, 'logging_nan_inf_filter': True, 'save_strategy': <SaveStrategy.STEPS: 'steps'>, 'save_steps': 20, 'save_total_limit': None, 'save_safetensors': True, 'save_on_each_node': False, 'save_only_model': False, 'restore_callback_states_from_checkpoint': False, 'no_cuda': False, 'use_cpu': False, 'use_mps_device': False, 'seed': 42, 'data_seed': None, 'jit_mode_eval': False, 'use_ipex': False, 'bf16': True, 'fp16': False, 'fp16_opt_level': 'O1', 'half_precision_backend': 'auto', 'bf16_full_eval': False, 'fp16_full_eval': False, 'tf32': True, 'local_rank': 0, 'ddp_backend': None, 'tpu_num_cores': None, 'tpu_metrics_debug': False, 'debug': [], 'dataloader_drop_last': False, 'eval_steps': 10, 'dataloader_num_workers': 0, 'dataloader_prefetch_factor': None, 'past_index': -1, 'run_name': 'qwen2-7b-instruct-trl-sft-ChartQA', 'disable_tqdm': False, 'remove_unused_columns': False, 'label_names': None, 'load_best_model_at_end': True, 'metric_for_best_model': 'eval_loss', 'greater_is_better': False, 'ignore_data_skip': False, 'fsdp': [], 'fsdp_min_num_params': 0, 'fsdp_config': {'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False}, 'tp_size': 0, 'fsdp_transformer_layer_cls_to_wrap': None, 'accelerator_config': AcceleratorConfig(split_batches=False, dispatch_batches=None, even_batches=True, use_seedable_sampler=True, non_blocking=False, gradient_accumulation_kwargs=None, use_configured_state=False), 'deepspeed': None, 'label_smoothing_factor': 0.0, 'optim': <OptimizerNames.ADAMW_TORCH_FUSED: 'adamw_torch_fused'>, 'optim_args': None, 'adafactor': False, 'group_by_length': False, 'length_column_name': 'length', 'report_to': ['wandb'], 'ddp_find_unused_parameters': None, 'ddp_bucket_cap_mb': None, 'ddp_broadcast_buffers': None, 'dataloader_pin_memory': True, 'dataloader_persistent_workers': False, 'skip_memory_metrics': True, 'use_legacy_prediction_loop': False, 'push_to_hub': True, 'resume_from_checkpoint': None, 'hub_model_id': None, 'hub_strategy': <HubStrategy.EVERY_SAVE: 'every_save'>, 'hub_token': None, 'hub_private_repo': None, 'hub_always_push': False, 'gradient_checkpointing': True, 'gradient_checkpointing_kwargs': {'use_reentrant': False}, 'include_inputs_for_metrics': False, 'include_for_metrics': [], 'eval_do_concat_batches': True, 'fp16_backend': 'auto', 'evaluation_strategy': None, 'push_to_hub_model_id': None, 'push_to_hub_organization': None, 'push_to_hub_token': None, 'mp_parameters': '', 'auto_find_batch_size': False, 'full_determinism': False, 'torchdynamo': None, 'ray_scope': 'last', 'ddp_timeout': 1800, 'torch_compile': False, 'torch_compile_backend': None, 'torch_compile_mode': None, 'dispatch_batches': None, 'split_batches': None, 'include_tokens_per_second': False, 'include_num_input_tokens_seen': False, 'neftune_noise_alpha': None, 'optim_target_modules': None, 'batch_eval_metrics': False, 'eval_on_start': False, 'use_liger_kernel': False, 'eval_use_gather_object': False, 'average_tokens_across_devices': False, 'model_init_kwargs': None, 'dataset_text_field': '', 'dataset_kwargs': {'skip_prepare_dataset': True}, 'dataset_num_proc': None, 'max_length': 1024, 'packing': False, 'padding_free': False, 'eval_packing': None, 'dataset_batch_size': None, 'num_of_sequences': None, 'chars_per_token': None, 'max_seq_length': None, 'use_liger': None, 'distributed_state': Distributed environment: NO
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda
+, '_n_gpu': 1, '__cached__setup_devices': device(type='cuda', index=0), 'deepspeed_plugin': None, '_wandb': {}}
+2025-03-27 13:18:56,423 INFO    MainThread:68061 [wandb_init.py:init():776] wandb.init() called while a run is active
+2025-03-27 13:18:56,425 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:18:56,425 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:19:07,947 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:19:07,957 INFO    MainThread:68061 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /home/cowlar/Documents/vlm/wandb/run-20250327_131907-bhkbaoic/logs/debug.log
+2025-03-27 13:19:07,957 INFO    MainThread:68061 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /home/cowlar/Documents/vlm/wandb/run-20250327_131907-bhkbaoic/logs/debug-internal.log
+2025-03-27 13:19:07,957 INFO    MainThread:68061 [wandb_init.py:init():761] calling init triggers
+2025-03-27 13:19:07,957 INFO    MainThread:68061 [wandb_init.py:init():766] wandb.init called with sweep_config: {}
+config: {'output_dir': 'qwen2-7b-instruct-trl-sft-ChartQA', 'overwrite_output_dir': False, 'do_train': False, 'do_eval': True, 'do_predict': False, 'eval_strategy': <IntervalStrategy.STEPS: 'steps'>, 'prediction_loss_only': False, 'per_device_train_batch_size': 4, 'per_device_eval_batch_size': 4, 'per_gpu_train_batch_size': None, 'per_gpu_eval_batch_size': None, 'gradient_accumulation_steps': 8, 'eval_accumulation_steps': None, 'eval_delay': 0, 'torch_empty_cache_steps': None, 'learning_rate': 0.0002, 'weight_decay': 0.0, 'adam_beta1': 0.9, 'adam_beta2': 0.999, 'adam_epsilon': 1e-08, 'max_grad_norm': 0.3, 'num_train_epochs': 3, 'max_steps': -1, 'lr_scheduler_type': <SchedulerType.CONSTANT: 'constant'>, 'lr_scheduler_kwargs': {}, 'warmup_ratio': 0.03, 'warmup_steps': 0, 'log_level': 'passive', 'log_level_replica': 'warning', 'log_on_each_node': True, 'logging_dir': 'qwen2-7b-instruct-trl-sft-ChartQA/runs/Mar27_13-12-34_ahsan-pc', 'logging_strategy': <IntervalStrategy.STEPS: 'steps'>, 'logging_first_step': False, 'logging_steps': 10, 'logging_nan_inf_filter': True, 'save_strategy': <SaveStrategy.STEPS: 'steps'>, 'save_steps': 20, 'save_total_limit': None, 'save_safetensors': True, 'save_on_each_node': False, 'save_only_model': False, 'restore_callback_states_from_checkpoint': False, 'no_cuda': False, 'use_cpu': False, 'use_mps_device': False, 'seed': 42, 'data_seed': None, 'jit_mode_eval': False, 'use_ipex': False, 'bf16': True, 'fp16': False, 'fp16_opt_level': 'O1', 'half_precision_backend': 'auto', 'bf16_full_eval': False, 'fp16_full_eval': False, 'tf32': True, 'local_rank': 0, 'ddp_backend': None, 'tpu_num_cores': None, 'tpu_metrics_debug': False, 'debug': [], 'dataloader_drop_last': False, 'eval_steps': 10, 'dataloader_num_workers': 0, 'dataloader_prefetch_factor': None, 'past_index': -1, 'run_name': 'qwen2-7b-instruct-trl-sft-ChartQA', 'disable_tqdm': False, 'remove_unused_columns': False, 'label_names': None, 'load_best_model_at_end': True, 'metric_for_best_model': 'eval_loss', 'greater_is_better': False, 'ignore_data_skip': False, 'fsdp': [], 'fsdp_min_num_params': 0, 'fsdp_config': {'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False}, 'tp_size': 0, 'fsdp_transformer_layer_cls_to_wrap': None, 'accelerator_config': AcceleratorConfig(split_batches=False, dispatch_batches=None, even_batches=True, use_seedable_sampler=True, non_blocking=False, gradient_accumulation_kwargs=None, use_configured_state=False), 'deepspeed': None, 'label_smoothing_factor': 0.0, 'optim': <OptimizerNames.ADAMW_TORCH_FUSED: 'adamw_torch_fused'>, 'optim_args': None, 'adafactor': False, 'group_by_length': False, 'length_column_name': 'length', 'report_to': ['wandb'], 'ddp_find_unused_parameters': None, 'ddp_bucket_cap_mb': None, 'ddp_broadcast_buffers': None, 'dataloader_pin_memory': True, 'dataloader_persistent_workers': False, 'skip_memory_metrics': True, 'use_legacy_prediction_loop': False, 'push_to_hub': True, 'resume_from_checkpoint': None, 'hub_model_id': None, 'hub_strategy': <HubStrategy.EVERY_SAVE: 'every_save'>, 'hub_token': None, 'hub_private_repo': None, 'hub_always_push': False, 'gradient_checkpointing': True, 'gradient_checkpointing_kwargs': {'use_reentrant': False}, 'include_inputs_for_metrics': False, 'include_for_metrics': [], 'eval_do_concat_batches': True, 'fp16_backend': 'auto', 'evaluation_strategy': None, 'push_to_hub_model_id': None, 'push_to_hub_organization': None, 'push_to_hub_token': None, 'mp_parameters': '', 'auto_find_batch_size': False, 'full_determinism': False, 'torchdynamo': None, 'ray_scope': 'last', 'ddp_timeout': 1800, 'torch_compile': False, 'torch_compile_backend': None, 'torch_compile_mode': None, 'dispatch_batches': None, 'split_batches': None, 'include_tokens_per_second': False, 'include_num_input_tokens_seen': False, 'neftune_noise_alpha': None, 'optim_target_modules': None, 'batch_eval_metrics': False, 'eval_on_start': False, 'use_liger_kernel': False, 'eval_use_gather_object': False, 'average_tokens_across_devices': False, 'model_init_kwargs': None, 'dataset_text_field': '', 'dataset_kwargs': {'skip_prepare_dataset': True}, 'dataset_num_proc': None, 'max_length': 1024, 'packing': False, 'padding_free': False, 'eval_packing': None, 'dataset_batch_size': None, 'num_of_sequences': None, 'chars_per_token': None, 'max_seq_length': None, 'use_liger': None, 'distributed_state': Distributed environment: NO
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda
+, '_n_gpu': 1, '__cached__setup_devices': device(type='cuda', index=0), 'deepspeed_plugin': None, '_wandb': {}}
+2025-03-27 13:19:07,957 INFO    MainThread:68061 [wandb_init.py:init():776] wandb.init() called while a run is active
+2025-03-27 13:19:07,959 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:19:07,960 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:19:12,995 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:19:12,998 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:19:12,999 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:19:14,223 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:19:14,226 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:19:14,226 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:19:14,236 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:19:14,238 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:19:14,239 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:19:14,412 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:19:14,415 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:19:14,415 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:19:14,693 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:19:14,695 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:19:14,696 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:19:14,826 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:19:14,829 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:19:14,831 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:19:15,404 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:19:15,409 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:19:15,409 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:19:15,709 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:19:15,713 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:19:15,713 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:19:15,844 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:19:15,848 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:19:15,848 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:19:16,923 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:19:16,945 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:19:16,945 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:29:53,734 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:29:53,736 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:29:53,736 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:29:59,286 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:29:59,361 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:29:59,361 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:33:34,779 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:33:34,782 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:33:34,783 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:33:35,737 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:33:35,741 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:33:35,742 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:33:38,183 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:33:38,185 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:33:38,185 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:33:50,872 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:33:50,875 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:33:50,876 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:33:57,628 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:33:57,935 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:33:57,935 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:35:43,844 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:35:44,001 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:35:44,002 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:36:39,938 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:36:39,952 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:36:39,952 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
+2025-03-27 13:39:20,028 INFO    MainThread:68061 [wandb_init.py:_resume_backend():569] resuming backend
+2025-03-27 13:39:20,030 INFO    MainThread:68061 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 13:39:20,030 INFO    MainThread:68061 [wandb_init.py:_pause_backend():564] pausing backend
